@@ -1,9 +1,9 @@
 
 
-sudo apt install nodejs
-
 kill $(lsof -t -i:3000)
 kill $(lsof -t -i:5000)
+
+docker-compose -f "docker-compose-mongo-db.yml" up -d --build
 
 npm install 
 

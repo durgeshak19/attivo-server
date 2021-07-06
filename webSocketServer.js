@@ -1,6 +1,7 @@
 var WebSocket = require('ws');
 
 const PORT = 3000;
+const TIME = 1 * 60 * 1000;
 const wsServer = new WebSocket.Server({port : PORT});
 
 
@@ -9,7 +10,7 @@ wsServer.on("connection" , function(socket){
     socket.on("message" , function(msg){
         console.log(msg);
     }); 
-    wsServer.timer = setInterval(function(){ping();} , 5000);
+    wsServer.timer = setInterval(function(){ping();} , TIME);
 });
 
 function ping() {

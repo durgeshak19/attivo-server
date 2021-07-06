@@ -1,0 +1,28 @@
+version: "3.5"
+services:
+  mongodb_container:
+    image: mongo:latest
+    container_name: "mongo"
+    ports:
+      - 27017:27017
+    volumes:
+      - "$PWD/mongodb_data:/data/db"
+    networks:
+      - mongodb
+
+  mongo-express:
+    image: mongo-express
+    container_name: "mongo-express"
+    ports:
+      - 9092:8081
+    depends_on: 
+      - mongodb_container
+    networks:
+      - mongodb
+
+volumes:
+  mongodb_container:
+    driver: local
+networks:
+  mongodb:
+    name: mongodb-networks
