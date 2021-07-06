@@ -2,28 +2,29 @@ var express = require('express')
 var app = express();
 app.use(express.json());
 
-var mongo = require('mongodb');
-var MongoClient = mongo.MongoClient;    
-MongoClient.connect('mongodb://'+DATABASEUSERNAME+':'+DATABASEPASSWORD+'@'+DATABASEHOST+':'+DATABASEPORT+'/'+DATABASENAME,function(err, db){  
-      if(err) 
-        console.log(err);
-      else
-      {
-        console.log('Mongo Conn....');
+// var mongo = require('mongodb');
+// var MongoClient = mongo.MongoClient;    
+// MongoClient.connect('mongodb://'+DATABASEUSERNAME+':'+DATABASEPASSWORD+'@'+DATABASEHOST+':'+DATABASEPORT+'/'+DATABASENAME,function(err, db){  
+//       if(err) 
+//         console.log(err);
+//       else
+//       {
+//         console.log('Mongo Conn....');
 
-      }
-    });
-//for local server 
-//in local server DBPASSWOAD and DBusername not required
-MongoClient.connect('mongodb://'+DATABASEHOST+':'+DATABASEPORT+'/'+DATABASENAME,function(err, db){  
-      if(err) 
-        console.log(err);
-      else
-      {
-        console.log('Mongo Conn....');
+//       }
+//     });
+// //for local server 
+// //in local server DBPASSWOAD and DBusername not required
+// MongoClient.connect('mongodb://'+DATABASEHOST+':'+DATABASEPORT+'/'+DATABASENAME,function(err, db){  
+//       if(err) 
+//         console.log(err);
+//       else
+//       {
 
-      }
-    });
+//         console.log('Mongo Conn....');
+
+//       }
+//     });
 
 
 
